@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Molecular Geometry</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="content submit-hide" id="content">
+        <div class="header submit-hide" id="myHeader">
+            <h1 id="headTitle" class="submit-hide">Molecular Geometry</h1>
+        </div>
+
+        <p style="margin-top: 2rem;" class="submit-hide">Draw the structure for <b><span id="variationMol">-</span></b>.
+            Start by selecting from the electron pair geometry menu.</p>
+        <h3 class="submit-hide">Step 1 - Select electron pair geometry</h3>
+
+        <label for="geometry" class="submit-hide">Select geometry:</label>
+        <select class="select-css submit-hide" name="geometry" id="geometry" onchange="displayMolecule(value);">
+            <option value="tri-bi">Trigonal Bipyramidal</option>
+            <option value="tri-planar">Triagonal Planar</option>
+            <option value="linear">Linear</option>
+            <option value="tetrahedral">Tetrahedral</option>
+            <option value="octahedral">Octahedral</option>
+        </select>
+
+        <h3 class="submit-hide">Step 2 - Complete the structure</h3>
+        <p class="submit-hide">Select an atom or electron pair from the menu and click a location to place that atom or
+            electron pair. Start by placing the central atom and then place the terminal atoms and electron pairs in the
+            correct locations. Only consider electron pairs on the central atom; do not worry about electron pairs on
+            the terminal atoms. To make any bond double or triple, click on the bond to add another.</p>
+
+        <div id="element-table" class="submit-hide">
+            <button id="C" title="Carbon" class="element-table" style="width:40px;height:40px;">C</button>
+            <button id="H" title="Hydrogen" class="element-table" style="width:40px;height:40px;">H</button>
+            <button id="N" title="Nitrogen" class="element-table" style="width:40px;height:40px;">N</button>
+            <button id="O" title="Oxygen" class="element-table" style="width:40px;height:40px;">O</button>
+            <button id="P" title="Phosphorus" class="element-table" style="width:40px;height:40px;">P</button>
+            <button id="S" title="Sulfur" class="element-table" style="width:40px;height:40px;">S</button>
+            <button id="F" title="Fluorine" class="element-table" style="width:40px;height:40px;">F</button>
+            <button id="B" title="Boron" class="element-table" style="width:40px;height:40px;">B</button>
+            <button id="Cl" title="Chlorine" class="element-table" style="width:40px;height:40px;">Cl</button>
+            <button id="Br" title="Bromine" class="element-table" style="width:40px;height:40px;">Br</button>
+            <button id="I" title="Iodine" class="element-table" style="width:40px;height:40px;">I</button>
+            <button id="Xe" title="Xenon" class="element-table" style="width:40px;height:40px;">Xe</button>
+            <button id="Be" title="Beryllium" class="element-table" style="width:40px;height:40px;">Be</button>
+            <button id="Si" title="Silicon" class="element-table" style="width:40px;height:40px;">Si</button>
+            <button id="pair" title="Electron pair" class="element-table"
+                style="width:40px;height:40px;">&#183;&#183;</button>
+        </div>
+
+        <div class="shell" id="shellDiv">
+            <img class="bracket-left" id="bracketLeft" src="../assets/svg/leftBrace.svg">
+            <div class="step2" id='octahedral' style='display: none'>
+                <svg version="1.1" id="Octahedral" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 665.9 633.4"
+                    style="enable-background:new 0 0 665.9 633.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            display: none;
+                        }
+
+                        .st1 {
+                            display: inline;
+                            fill: #231F20;
+                            stroke: #231F20;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st2 {
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st3 {
+                            fill: #231F20;
+                            fill-opacity: 0;
+                        }
+
+                        .st4 {
+                            fill: #FFFFFF;
+                            stroke: #231F20;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st5 {
+                            display: none;
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st6 {
+                            fill: #231F20;
+                        }
+                    </style>
+                    <g id="dots">
+                        <g id="dot1" class="st0">
+                            <circle id="d1_1_" class="st1" cx="343.8" cy="224.6" r="9" />
+                            <circle id="d1" class="st1" cx="322" cy="224.6" r="9" />
+                        </g>
+                        <g id="dot2" class="st0">
+                            <circle id="d1_3_" class="st1" cx="418.1" cy="280.1" r="9" />
+                            <circle id="d1_2_" class="st1" cx="407.2" cy="261.2" r="9" />
+                        </g>
+                        <g id="dot3" class="st0">
+                            <circle id="d1_5_" class="st1" cx="407.2" cy="372.2" r="9" />
+                            <circle id="d1_4_" class="st1" cx="418.1" cy="353.3" r="9" />
+                        </g>
+                        <g id="dot4" class="st0">
+                            <circle id="d4_1_" class="st1" cx="322" cy="408.8" r="9" />
+                            <circle id="d4" class="st1" cx="343.8" cy="408.8" r="9" />
+                        </g>
+                        <g id="dot5" class="st0">
+
+                            <ellipse id="d5_1_" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -140.7151 541.2092)"
+                                class="st1" cx="247.7" cy="353.3" rx="9" ry="9" />
+                            <circle id="d5" class="st1" cx="258.6" cy="372.2" r="9" />
+                        </g>
+                        <g id="dot6" class="st0">
+                            <circle id="d6_1_" class="st1" cx="258.6" cy="261.2" r="9" />
+
+                            <ellipse id="d6" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -68.4603 479.7346)"
+                                class="st1" cx="247.7" cy="280.1" rx="9" ry="9" />
+                        </g>
+                    </g>
+                    <g id="legs">
+                        <g id="leg1" class="octahedral-leg">
+                            <line id="line11" style="display:none" class="st2" x1="325.6" y1="176.4" x2="325.6"
+                                y2="247.1" />
+                            <line id="line12" style="display:block" class="st2" x1="332.9" y1="176.4" x2="332.9"
+                                y2="247.1" />
+                            <line id="line13" style="display:none" class="st2" x1="339.7" y1="176.4" x2="339.7"
+                                y2="247" />
+                            <polygon id="lineZone1" class="st3"
+                                points="323.8,176.3 341.5,176.3 341.5,247 323.3,247 		" />
+                            <circle id="circle1" class="st4" cx="332.9" cy="105.8" r="54.5" />
+                        </g>
+                        <g id="leg2" class="octahedral-leg">
+                            <line id="line21" class="st5" x1="450.8" y1="240.2" x2="389.5" y2="275.6" />
+                            <line id="line22" class="st5" x1="454.4" y1="246.6" x2="393.2" y2="281.9" />
+                            <line id="line23" class="st5" x1="457.8" y1="252.4" x2="396.7" y2="287.7" />
+                            <g id="backline2">
+                                <polygon class="st6" points="458.8,253.9 457.4,254.5 448.7,239.6 449.9,238.6 			" />
+                                <polygon class="st6" points="454.3,255.8 451.4,257.1 443.5,243.5 446.1,241.6 			" />
+                                <polygon class="st6" points="448.4,258.3 445.4,259.6 438.4,247.5 440.9,245.4 			" />
+                                <polygon class="st6" points="442.4,260.9 439.4,262.1 433.2,251.4 435.7,249.4 			" />
+                                <polygon class="st6" points="436.5,263.5 433.4,264.7 428,255.4 430.6,253.4 			" />
+                                <polygon class="st6" points="430.4,266 427.5,267.3 422.8,259.2 425.4,257.3 			" />
+                                <polygon class="st6" points="424.5,268.6 421.5,269.8 417.7,263.2 420.3,261.3 			" />
+                                <polygon class="st6" points="418.6,271.1 415.5,272.4 412.5,267.2 415,265.1 			" />
+                                <polygon class="st6" points="412.5,273.6 409.6,274.9 407.4,271.1 409.9,269.1 			" />
+                                <polygon class="st6" points="406.5,276.3 403.5,277.4 402.2,275.1 404.7,273.1 			" />
+                                <polygon class="st6" points="400.6,278.7 397.6,280 397,278.9 399.6,276.9 			" />
+                                <polygon class="st6" points="394.6,281.2 393.1,281.8 394.4,280.8 			" />
+                            </g>
+                            <polygon id="lineZone2" class="st3"
+                                points="449.9,238.6 458.8,253.9 397.6,289.3 388.5,273.5 		" />
+                            <circle id="circle2" class="st4" cx="515.5" cy="211.3" r="54.5" />
+                        </g>
+                        <g id="leg3" class="octahedral-leg">
+                            <line id="line31" class="st5" x1="458.1" y1="380.5" x2="396.8" y2="345.2" />
+                            <line id="line32" class="st5" x1="454.4" y1="386.9" x2="393.2" y2="351.5" />
+                            <line id="line33" class="st5" x1="451" y1="392.7" x2="389.9" y2="357.4" />
+                            <g>
+                                <polygon id="frontline3" class="st6" points="450.2,394.3 393.2,351.4 459,379 			" />
+                                <circle id="circle3" class="st4" cx="515.5" cy="422.2" r="54.5" />
+                            </g>
+                            <polygon id="lineZone3" class="st3" points="459,379 450.2,394.3 389,359 398.1,343.2 		" />
+                        </g>
+                        <g id="leg4" class="octahedral-leg">
+                            <line id="line41" style="display:none" class="st2" x1="340.2" y1="457" x2="340.2"
+                                y2="386.3" />
+                            <line id="line42" style="display:block" class="st2" x1="332.9" y1="457" x2="332.9"
+                                y2="386.3" />
+                            <line id="line43" style="display:none" class="st2" x1="326.1" y1="457" x2="326.1"
+                                y2="386.4" />
+                            <polygon id="lineZone4" class="st3"
+                                points="342,457.1 324.3,457.1 324.3,386.4 342.5,386.4 		" />
+                            <circle id="circle4" class="st4" cx="332.9" cy="527.6" r="54.5" />
+                        </g>
+                        <g id="leg5" class="octahedral-leg">
+                            <line id="line11_4_" class="st5" x1="215" y1="393.2" x2="276.3" y2="357.8" />
+                            <line id="line12_4_" class="st5" x1="211.4" y1="386.9" x2="272.6" y2="351.5" />
+                            <line id="line13_4_" class="st5" x1="208" y1="381" x2="269.1" y2="345.7" />
+                            <g>
+                                <polygon id="frontline1_4_" class="st6"
+                                    points="207,379.5 272.7,351.6 215.9,394.8 			" />
+                                <circle id="circle1_4_" class="st4" cx="150.3" cy="422.2" r="54.5" />
+                            </g>
+                            <polygon id="lineZone5" class="st3"
+                                points="215.9,394.8 207,379.5 268.2,344.1 277.3,359.9 		" />
+                        </g>
+                        <g id="leg6" class="octahedral-leg">
+                            <line id="line61" class="st5" x1="207.7" y1="252.9" x2="269" y2="288.2" />
+                            <line id="line62" class="st5" x1="211.4" y1="246.6" x2="272.6" y2="281.9" />
+                            <line id="line63" class="st5" x1="214.8" y1="240.7" x2="275.9" y2="276" />
+                            <g id="backline6">
+                                <polygon class="st6" points="215.6,239.1 216.8,240 208.2,255 206.8,254.4 			" />
+                                <polygon class="st6" points="219.5,242 222,243.9 214.2,257.5 211.3,256.2 			" />
+                                <polygon class="st6" points="224.6,245.9 227.2,247.8 220.2,259.9 217.2,258.8 			" />
+                                <polygon class="st6" points="229.8,249.8 232.4,251.8 226.2,262.5 223.2,261.3 			" />
+                                <polygon class="st6" points="235,253.6 237.6,255.7 232.2,265 229.2,263.7 			" />
+                                <polygon class="st6" points="240.2,257.6 242.8,259.5 238.2,267.6 235.2,266.3 			" />
+                                <polygon class="st6" points="245.4,261.4 248,263.4 244.2,270 241.2,268.7 			" />
+                                <polygon class="st6" points="250.5,265.3 253.2,267.3 250.2,272.5 247.2,271.4 			" />
+                                <polygon class="st6" points="255.8,269.3 258.3,271.2 256.1,275 253.2,273.8 			" />
+                                <polygon class="st6" points="261.1,273.1 263.6,275.2 262.2,277.5 259.2,276.3 			" />
+                                <polygon class="st6" points="266.1,277.1 268.8,279 268.1,280.1 265.1,278.9 			" />
+                                <polygon class="st6" points="271.3,281 272.6,282 271.1,281.4 			" />
+                            </g>
+                            <polygon id="lineZone6" class="st3"
+                                points="206.8,254.4 215.6,239.1 276.8,274.4 267.7,290.2 		" />
+                            <circle id="circle6" class="st4" cx="150.3" cy="211.2" r="54.5" />
+                        </g>
+                    </g>
+                    <circle id="circleMain" class="st4" cx="332.9" cy="316.7" r="54.5" />
+                </svg>
+                <p id='octahedral1' class='octahedral-atom' style='left: 210px; top: 198px;'></p>
+                <p id='octahedral2' class='octahedral-atom' style='left: 210px; top: 39px;'></p>
+                <p id='octahedral3' class='octahedral-atom' style='left: 348px; top: 119px;'></p>
+                <p id='octahedral4' class='octahedral-atom' style='left: 348px; top: 277px;'></p>
+                <p id='octahedral5' class='octahedral-atom' style='left: 210px; top: 355px;'></p>
+                <p id='octahedral6' class='octahedral-atom' style='left: 73px; top: 277px;'></p>
+                <p id='octahedral7' class='octahedral-atom' style='left: 73px; top: 119px;'></p>
+            </div>
+
+            <div class="step2" id='tetrahedral'>
+                <svg version="1.1" id="tetrahedral" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 665.9 633.4"
+                    style="enable-background:new 0 0 665.9 633.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            display: none;
+                        }
+
+                        .st1 {
+                            display: inline;
+                            fill: #231F20;
+                            stroke: #231F20;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st2 {
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st3 {
+                            fill: #231F20;
+                            fill-opacity: 0;
+                        }
+
+                        .st4 {
+                            fill: #FFFFFF;
+                            stroke: #231F20;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st5 {
+                            display: none;
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st6 {
+                            fill: #231F20;
+                        }
+                    </style>
+                    <g id="dots">
+                        <g id="dot1" class="st0">
+                            <circle id="d1_1_" class="st1" cx="343.8" cy="224.6" r="9" />
+                            <circle id="d1" class="st1" cx="322" cy="224.6" r="9" />
+                        </g>
+                        <g id="dot2" class="st0">
+                            <circle id="d2_1_" class="st1" cx="415.7" cy="358.4" r="9" />
+                            <circle id="d2" class="st1" cx="423.2" cy="338" r="9" />
+                        </g>
+                        <g id="dot3" class="st0">
+                            <circle id="d3_1_" class="st1" cx="369.5" cy="401.9" r="9" />
+                            <circle id="d3" class="st1" cx="388.4" cy="391" r="9" />
+                        </g>
+                        <g id="dot4" class="st0">
+                            <circle id="d4_1_" class="st1" cx="255.3" cy="367.6" r="9" />
+                            <circle id="d4" class="st1" cx="269.4" cy="384.3" r="9" />
+                        </g>
+                    </g>
+                    <g id="legs">
+                        <g id="leg1" class="tetrahedral-leg">
+                            <line id="line11" style="display:none" class="st2" x1="325.6" y1="176.4" x2="325.6"
+                                y2="247.1" />
+                            <line id="line12" style="display:block" class="st2" x1="332.9" y1="176.4" x2="332.9"
+                                y2="247.1" />
+                            <line id="line13" style="display:none" class="st2" x1="339.7" y1="176.4" x2="339.7"
+                                y2="247" />
+                            <polygon id="lineZone1" class="st3"
+                                points="323.8,176.3 341.5,176.3 341.5,247 323.3,247 		" />
+                            <circle id="circle1" class="st4" cx="332.9" cy="105.8" r="54.5" />
+                        </g>
+                        <g id="leg2" class="tetrahedral-leg">
+                            <line id="line21" style="display:none" class="st5" x1="467.2" y1="357.8" x2="400.8"
+                                y2="333.6" />
+                            <line id="line22" style="display:none" class="st5" x1="464.7" y1="364.7" x2="398.3"
+                                y2="340.5" />
+                            <line id="line23" style="display:none" class="st5" x1="462.4" y1="371.1" x2="396.1"
+                                y2="346.9" />
+                            <g id="backline2">
+                                <polygon class="st6" points="461.9,372.8 460.6,372.1 466.4,355.8 467.9,356.2 			" />
+                                <polygon class="st6" points="457.6,370.6 454.7,369.1 460.1,354.4 463.2,355.2 			" />
+                                <polygon class="st6" points="451.8,367.7 449,366.2 453.8,353 456.9,353.7 			" />
+                                <polygon class="st6" points="446,364.7 443.1,363.2 447.4,351.6 450.6,352.2 			" />
+                                <polygon class="st6" points="440.2,361.8 437.3,360.2 441,350.1 444.2,350.8 			" />
+                                <polygon class="st6" points="434.4,358.8 431.5,357.4 434.7,348.6 437.9,349.4 			" />
+                                <polygon class="st6" points="428.7,355.9 425.8,354.4 428.4,347.3 431.5,348 			" />
+                                <polygon class="st6" points="422.9,353 420,351.5 422,345.8 425.2,346.5 			" />
+                                <polygon class="st6" points="417.1,350 414.2,348.5 415.7,344.4 418.9,345.1 			" />
+                                <polygon class="st6" points="411.2,347.1 408.4,345.6 409.3,343 412.5,343.6 			" />
+                                <polygon class="st6" points="405.5,344.1 402.6,342.7 403.1,341.5 406.2,342.2 			" />
+                                <polygon class="st6" points="399.8,341.1 398.3,340.4 399.9,340.8 			" />
+                            </g>
+                            <polygon id="lineZone2" class="st3"
+                                points="467.9,356.2 461.9,372.8 395.5,348.6 401.7,331.5 		" />
+                            <circle id="circle2" class="st4" cx="531.1" cy="388.8" r="54.5" />
+                        </g>
+                        <g id="leg3" class="tetrahedral-leg">
+                            <line id="line31" style="display:none" class="st5" x1="409.4" y1="434.6" x2="374"
+                                y2="373.3" />
+                            <line id="line32" style="display:none" class="st5" x1="403.1" y1="438.2" x2="367.7"
+                                y2="377" />
+                            <line id="line33" style="display:none" class="st5" x1="397.2" y1="441.6" x2="361.9"
+                                y2="380.5" />
+                            <g>
+                                <polygon id="frontline3" class="st6" points="395.7,442.6 367.8,376.9 411,433.7 			" />
+                                <circle id="circle3" class="st4" cx="438.4" cy="499.3" r="54.5" />
+                            </g>
+                            <polygon id="lineZone3" class="st3"
+                                points="411,433.7 395.7,442.6 360.3,381.4 376.1,372.3 		" />
+                        </g>
+                        <g id="leg4" class="tetrahedral-leg">
+                            <line id="line41" style="display:none" class="st2" x1="230.1" y1="412.5" x2="284.3"
+                                y2="367" />
+                            <line id="line42" style="display:block" class="st2" x1="225.4" y1="406.9" x2="279.6"
+                                y2="361.4" />
+                            <line id="line43" style="display:none" class="st2" x1="221.1" y1="401.7" x2="275.1"
+                                y2="356.3" />
+                            <circle id="circle4" class="st4" cx="171.3" cy="452.3" r="54.5" />
+                            <polygon id="lineZone4" class="st3"
+                                points="231.2,413.9 219.8,400.4 274,354.9 285.7,368.9 		" />
+                        </g>
+                    </g>
+                    <circle id="circleMain" class="st4" cx="332.9" cy="316.7" r="54.5" />
+                </svg>
+                <p id='tetrahedral1' class='tetrahedral-atom' style='left: 210px; top: 198px;'></p>
+                <p id='tetrahedral2' class='tetrahedral-atom' style='left: 210px; top: 39px;'></p>
+                <p id='tetrahedral3' class='tetrahedral-atom' style='left: 359px; top: 252px;'></p>
+                <p id='tetrahedral4' class='tetrahedral-atom' style='left: 289px; top: 334px;'></p>
+                <p id='tetrahedral5' class='tetrahedral-atom' style='left: 89px; top: 300px;'></p>
+            </div>
+
+            <div class="step2" id='linear'>
+                <svg version="1.1" id="Linear" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 665.9 633.4"
+                    style="enable-background:new 0 0 665.9 633.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            display: none;
+                        }
+
+                        .st1 {
+                            display: inline;
+                            fill: #231F20;
+                            stroke: #231F20;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st2 {
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st3 {
+                            fill: #231F20;
+                            fill-opacity: 0;
+                        }
+
+                        .st4 {
+                            fill: #FFFFFF;
+                            stroke: #231F20;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st5 {
+                            display: none;
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st6 {
+                            fill: #231F20;
+                        }
+                    </style>
+                    <g id="dots">
+                        <g id="dot1" class="st0">
+                            <circle id="d1_1_" class="st1" cx="402.6" cy="305.4" r="9" />
+                            <circle id="d1" class="st1" cx="402.6" cy="327.4" r="9" />
+                        </g>
+
+                        <g id="dot4" class="st0">
+                            <circle id="d4_1_" class="st1" cx="263.6" cy="305.4" r="9" />
+                            <circle id="d4" class="st1" cx="263.6" cy="327.4" r="9" />
+                        </g>
+                    </g>
+                    <g id="legs">
+                        <g id="leg1" class="linear-leg">
+                            <line id="line11" style="display:none" class="st2" x1="398" y1="305.4" x2="468.6"
+                                y2="305.4" />
+                            <line id="line12" style="display:block" class="st2" x1="398" y1="312.2" x2="468.6"
+                                y2="312.2" />
+                            <line id="line13" style="display:none" class="st2" x1="398" y1="319" x2="468.6" y2="319" />
+                            <polygon id="lineZone1" class="st3" points="398,305.4 468.6,305.4 468.6,319 398,319 		" />
+                            <circle id="circle1" class="st4" cx="532.9" cy="316.7" r="54.5" />
+                        </g>
+
+                        <g id="leg4" class="linear-leg">
+                            <line id="line41" style="display:none" class="st2" x1="198" y1="305.4" x2="268.6"
+                                y2="305.4" />
+                            <line id="line42" style="display:block" class="st2" x1="198" y1="312.2" x2="268.6"
+                                y2="312.2" />
+                            <line id="line43" style="display:none" class="st2" x1="198" y1="319" x2="268.6" y2="319" />
+                            <circle id="circle4" class="st4" cx="132.9" cy="316.7" r="54.5" />
+                            <polygon id="lineZone4" class="st3" points="198,305.4 268.6,305.4 268.6,319 198,319 		" />
+                        </g>
+                    </g>
+                    <circle id="circleMain" class="st4" cx="332.9" cy="316.7" r="54.5" />
+                </svg>
+                <p id='linear1' class='linear-atom' style='left: 210px; top: 198px;'></p>
+                <p id='linear2' class='linear-atom' style='left: 360px; top: 198px;'></p>
+                <p id='linear3' class='linear-atom' style='left: 60px; top: 198px;'></p>
+            </div>
+
+
+            <div class="step2" id='tri-planar' style='display: none'>
+                <svg version="1.1" id="Tri-planar" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 665.9 633.4"
+                    style="enable-background:new 0 0 665.9 633.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            display: none;
+                        }
+
+                        .st1 {
+                            display: inline;
+                            fill: #231F20;
+                            stroke: #231F20;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st2 {
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st3 {
+                            fill: #231F20;
+                            fill-opacity: 0;
+                        }
+
+                        .st4 {
+                            fill: #FFFFFF;
+                            stroke: #231F20;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st5 {
+                            display: none;
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st6 {
+                            fill: #231F20;
+                        }
+                    </style>
+                    <g id="dots">
+                        <g id="dot1" class="st0">
+                            <circle id="d1_1_" class="st1" cx="343.8" cy="224.6" r="9" />
+                            <circle id="d1" class="st1" cx="322" cy="224.6" r="9" />
+                        </g>
+
+                        <g id="dot4" class="st0 ">
+                            <circle id="d4_5_" class="st1" cx="407.2" cy="372.2" r="9" />
+                            <circle id="d4_4_" class="st1" cx="418.1" cy="353.3" r="9" />
+                        </g>
+
+                        <g id="dot5" class="st0">
+                            <ellipse id="d5_1_" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -140.7151 541.2092)"
+                                class="st1" cx="247.7" cy="353.3" rx="9" ry="9" />
+                            <circle id="d5" class="st1" class="st1" cx="258.6" cy="372.2" r="9" />
+                        </g>
+
+                    </g>
+                    <g id="legs">
+                        <g id="leg1" class="tri-planar-leg">
+                            <line id="line11" style="display:none" class="st2" x1="325.6" y1="176.4" x2="325.6"
+                                y2="247.1" />
+                            <line id="line12" style="display:block" class="st2" x1="332.9" y1="176.4" x2="332.9"
+                                y2="247.1" />
+                            <line id="line13" style="display:none" class="st2" x1="339.7" y1="176.4" x2="339.7"
+                                y2="247" />
+                            <polygon id="lineZone1" class="st3"
+                                points="323.8,176.3 341.5,176.3 341.5,247 323.3,247 		" />
+                            <circle id="circle1" class="st4" cx="332.9" cy="105.8" r="54.5" />
+                        </g>
+
+                        <g id="leg2" class="tri-planar-leg">
+                            <line id="line21" style="display:none" class="st2" x1="458.1" y1="380.5" x2="396.8"
+                                y2="345.2" />
+                            <line id="line22" style="display:block" class="st2" x1="454.4" y1="386.9" x2="393.2"
+                                y2="351.5" />
+                            <line id="line23" style="display:none" class="st2" x1="451" y1="392.7" x2="389.9"
+                                y2="357.4" />
+                            <g>
+                                <circle id="circle2" class="st4" cx="515.5" cy="422.2" r="54.5" />
+                            </g>
+                            <polygon id="lineZone2" class="st3" points="459,379 450.2,394.3 389,359 398.1,343.2 		" />
+                        </g>
+
+                        <g id="leg3" class="tri-planar-leg">
+                            <line id="line31_3_" style="display:none" class="st2" x1="215" y1="393.2" x2="276.3"
+                                y2="357.8" />
+                            <line id="line32_3_" style="display:block" class="st2" x1="211.4" y1="386.9" x2="272.6"
+                                y2="351.5" />
+                            <line id="line33_3_" style="display:none" class="st2" x1="208" y1="381" x2="269.1"
+                                y2="345.7" />
+                            <g>
+                                <circle id="circle1_3_" class="st4" cx="150.3" cy="422.2" r="54.5" />
+                            </g>
+                            <polygon id="lineZone3" class="st3"
+                                points="215.9,394.8 207,379.5 268.2,344.1 277.3,359.9 		" />
+                        </g>
+
+                    </g>
+                    <circle id="circleMain" class="st4" cx="332.9" cy="316.7" r="54.5" />
+                </svg>
+                <p id='tri-planar1' class='tri-planar-atom' style='left: 210px; top: 198px;'></p>
+                <p id='tri-planar2' class='tri-planar-atom' style='left: 210px; top: 39px;'></p>
+                <p id='tri-planar3' class='tri-planar-atom' style='left: 348px; top: 277px;'></p>
+                <p id='tri-planar4' class='tri-planar-atom' style='left: 73px; top: 277px;'></p>
+            </div>
+
+            <div class="step2" id='tri-bi' style='display: none'>
+                <svg version="1.1" id="Tri-bi" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 665.9 633.4"
+                    style="enable-background:new 0 0 665.9 633.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            display: none;
+                        }
+
+                        .st1 {
+                            display: inline;
+                            fill: #231F20;
+                            stroke: #231F20;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st2 {
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st3 {
+                            fill: #231F20;
+                            fill-opacity: 0;
+                        }
+
+                        .st4 {
+                            fill: #FFFFFF;
+                            stroke: #231F20;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st5 {
+                            display: none;
+                            fill: none;
+                            stroke: #231F20;
+                            stroke-width: 4;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st6 {
+                            fill: #231F20;
+                        }
+                    </style>
+                    <g id="dots">
+                        <g id="dot1" class="st0">
+                            <circle id="d1_1_" class="st1" cx="343.8" cy="224.6" r="9" />
+                            <circle id="d1" class="st1" cx="322" cy="224.6" r="9" />
+                        </g>
+
+                        <g id="dot3" class="st0">
+                            <circle id="d1_5_" class="st1" cx="417.6" cy="305.4" r="9" />
+                            <circle id="d1_4_" class="st1" cx="417.6" cy="327.4" r="9" />
+                        </g>
+                        <g id="dot4" class="st0">
+                            <circle id="d4_1_" class="st1" cx="322" cy="408.8" r="9" />
+                            <circle id="d4" class="st1" cx="343.8" cy="408.8" r="9" />
+                        </g>
+                        <g id="dot5" class="st0">
+                            <ellipse id="d5_1_" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -140.7151 541.2092)"
+                                class="st1" cx="247.7" cy="353.3" rx="9" ry="9" />
+                            <circle id="d5" class="st1" cx="258.6" cy="372.2" r="9" />
+                        </g>
+                        <g id="dot6" class="st0">
+                            <circle id="d6_1_" class="st1" cx="258.6" cy="261.2" r="9" />
+                            <ellipse id="d6" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -68.4603 479.7346)"
+                                class="st1" cx="247.7" cy="280.1" rx="9" ry="9" />
+                        </g>
+                    </g>
+                    <g id="legs">
+                        <g id="leg1" class="tri-bi-leg">
+                            <line id="line11" style="display:none" class="st2" x1="325.6" y1="176.4" x2="325.6"
+                                y2="247.1" />
+                            <line id="line12" style="display:block" class="st2" x1="332.9" y1="176.4" x2="332.9"
+                                y2="247.1" />
+                            <line id="line13" style="display:none" class="st2" x1="339.7" y1="176.4" x2="339.7"
+                                y2="247" />
+                            <polygon id="lineZone1" class="st3"
+                                points="323.8,176.3 341.5,176.3 341.5,247 323.3,247 		" />
+                            <circle id="circle1" class="st4" cx="332.9" cy="105.8" r="54.5" />
+                        </g>
+
+                        <g id="leg2" class="tri-bi-leg">
+                            <line id="line21" style="display:none" class="st5" x1="398" y1="305.4" x2="468.6"
+                                y2="305.4" />
+                            <line id="line22" style="display:none" class="st5" x1="398" y1="312.2" x2="468.6"
+                                y2="312.2" />
+                            <line id="line23" style="display:none" class="st5" x1="398" y1="319" x2="468.6" y2="319" />
+                            <g>
+                                <polygon id="frontline2" class="st6" points="468.6,305.4 468.6,319 398,312.2 			" />
+                                <circle id="circle2" class="st4" cx="532.9" cy="316.7" r="54.5" />
+                            </g>
+                            <polygon id="lineZone2" class="st3" points="398,305.4 468.6,305.4 468.6,319 398,319		" />
+                        </g>
+                        <g id="leg3" class="tri-bi-leg">
+                            <line id="line31" style="display:none" class="st2" x1="340.2" y1="457" x2="340.2"
+                                y2="386.3" />
+                            <line id="line32" style="display:block" class="st2" x1="332.9" y1="457" x2="332.9"
+                                y2="386.3" />
+                            <line id="line33" style="display:none" class="st2" x1="326.1" y1="457" x2="326.1"
+                                y2="386.4" />
+                            <polygon id="lineZone3" class="st3"
+                                points="342,457.1 324.3,457.1 324.3,386.4 342.5,386.4 		" />
+                            <circle id="circle3" class="st4" cx="332.9" cy="527.6" r="54.5" />
+                        </g>
+                        <g id="leg4" class="tri-bi-leg">
+                            <line id="line11_4_" style="display:none" class="st5" x1="215" y1="393.2" x2="276.3"
+                                y2="357.8" />
+                            <line id="line12_4_" style="display:none" class="st5" x1="211.4" y1="386.9" x2="272.6"
+                                y2="351.5" />
+                            <line id="line13_4_" style="display:none" class="st5" x1="208" y1="381" x2="269.1"
+                                y2="345.7" />
+                            <g>
+                                <polygon id="frontline1_4_" class="st6"
+                                    points="207,379.5 272.7,351.6 215.9,394.8 			" />
+                                <circle id="circle1_4_" class="st4" cx="150.3" cy="422.2" r="54.5" />
+                            </g>
+                            <polygon id="lineZone4" class="st3"
+                                points="215.9,394.8 207,379.5 268.2,344.1 277.3,359.9 		" />
+                        </g>
+                        <g id="leg5" class="tri-bi-leg">
+                            <line id="line51" style="display:none" class="st5" x1="207.7" y1="252.9" x2="269"
+                                y2="288.2" />
+                            <line id="line52" style="display:none" class="st5" x1="211.4" y1="246.6" x2="272.6"
+                                y2="281.9" />
+                            <line id="line53" style="display:none" class="st5" x1="214.8" y1="240.7" x2="275.9"
+                                y2="276" />
+                            <g id="backline5">
+                                <polygon class="st6" points="215.6,239.1 216.8,240 208.2,255 206.8,254.4 			" />
+                                <polygon class="st6" points="219.5,242 222,243.9 214.2,257.5 211.3,256.2 			" />
+                                <polygon class="st6" points="224.6,245.9 227.2,247.8 220.2,259.9 217.2,258.8 			" />
+                                <polygon class="st6" points="229.8,249.8 232.4,251.8 226.2,262.5 223.2,261.3 			" />
+                                <polygon class="st6" points="235,253.6 237.6,255.7 232.2,265 229.2,263.7 			" />
+                                <polygon class="st6" points="240.2,257.6 242.8,259.5 238.2,267.6 235.2,266.3 			" />
+                                <polygon class="st6" points="245.4,261.4 248,263.4 244.2,270 241.2,268.7 			" />
+                                <polygon class="st6" points="250.5,265.3 253.2,267.3 250.2,272.5 247.2,271.4 			" />
+                                <polygon class="st6" points="255.8,269.3 258.3,271.2 256.1,275 253.2,273.8 			" />
+                                <polygon class="st6" points="261.1,273.1 263.6,275.2 262.2,277.5 259.2,276.3 			" />
+                                <polygon class="st6" points="266.1,277.1 268.8,279 268.1,280.1 265.1,278.9 			" />
+                                <polygon class="st6" points="271.3,281 272.6,282 271.1,281.4 			" />
+                            </g>
+                            <polygon id="lineZone5" class="st3"
+                                points="206.8,254.4 215.6,239.1 276.8,274.4 267.7,290.2 		" />
+                            <circle id="circle5" class="st4" cx="150.3" cy="211.2" r="54.5" />
+                        </g>
+                    </g>
+                    <circle id="circleMain" class="st4" cx="332.9" cy="316.7" r="54.5" />
+                </svg>
+                <p id='tri-bi1' class='tri-bi-atom' style='left: 210px; top: 198px;'></p>
+                <p id='tri-bi2' class='tri-bi-atom' style='left: 210px; top: 39px;'></p>
+                <p id='tri-bi3' class='tri-bi-atom' style='left: 360px; top: 198px;'></p>
+                <p id='tri-bi4' class='tri-bi-atom' style='left: 210px; top: 355px;'></p>
+                <p id='tri-bi5' class='tri-bi-atom' style='left: 73px; top: 277px;'></p>
+                <p id='tri-bi6' class='tri-bi-atom' style='left: 73px; top: 119px;'></p>
+            </div>
+            <img class="bracket-right" id="bracketRight" src="../assets/svg/rightBrace.svg">
+            <span class="chargeSign" style="font-size:40px;" id="charge"></span>
+
+            <span><button class="submit-hide" id="clear-btn" title="Clear canvas" onclick="clearCanvas()">&#128472;
+                    Clear</button></span>
+
+        </div>
+
+        <h3 style="margin-top:1rem">Step 3 - Select molecular geometry</h3>
+
+        <label for="mol-geometry">Select geometry:</label>
+        <select class="select-css submit-hide" name="mol-geometry" id="mol-geometry">
+            <option value="tri-bi">Trigonal pyramidal</option>
+            <option value="tri-planar">Trigonal Planar</option>
+            <option value="linear">Linear</option>
+            <option value="tetrahedral">Tetrahedral</option>
+            <option value="octahedral">Octahedral</option>
+            <option value="square-planar">Square Planar</option>
+            <option value="square-pyramidal">Square Pyramidal</option>
+            <option value="see-saw">See-Saw</option>
+            <option value="t-shaped">T-shaped</option>
+            <option value="bent">Bent</option>
+        </select>
+
+        <div id="fb" class="submit-hide">
+
+            <div class="bottom-buttons submit-hide" style="display:block">
+                <button id="submit-btn" onclick="getResponse()">Submit</button>
+                <button id="try-btn" onclick="refreshPage()">Try Another</button>
+            </div>
+
+        </div>
+        <script src="js/data.js"></script>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
